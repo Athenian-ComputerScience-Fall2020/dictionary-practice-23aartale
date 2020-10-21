@@ -12,14 +12,14 @@ def make_dict():
 def add_element():
     foods = {'fruit': 'apple', 'veggie': 'carrot', 'grain': 'barley'}
 
-    added_value = foods.add(4, 'dairy', 'yogurt')
+    foods['dairy'] = 'yogurt'
 
     return foods
 
 def remove_element():
     foods = {'fruit': 'apple', 'veggie': 'carrot', 'grain': 'barley'}
     # remove 'veggie': 'carrot' from the dictionary
-    removed_value = foods.pop('veggie', 'carrot')
+    foods.pop('veggie')
 
     return foods
 
@@ -28,8 +28,8 @@ def merge_dict():
     dict1 = {'Ten': 10, 'Twenty': 20, 'Thirty': 30}
     dict2 = {'Thirty': 30, 'Fourty': 40, 'Fifty': 50}
     # add code here
-    dict3 = {**dict1, **dict2}
-    return dict3     # return new dictionary
+    dict1.update(dict2)
+    return dict1    # return new dictionary
 
 def access_key():
     # return the value of the key 'Twenty'
@@ -45,5 +45,5 @@ def access_key():
 if __name__ == '__main__':
     # Test your code with this first
     # Change the function to test different sections
-    print(make_dict())
+    print(merge_dict())
 
